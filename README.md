@@ -7,12 +7,12 @@ $ ./file2array OPTIONS
 		-i input file
 		-o output header file(without .h)
 		-l language c or cpp
-```shell
+```
 
 如有一个a.pdf文件，需要转成数组，则可以使用如下命令：
 ```shell
 ./file2array -i a.pdf -o pdf -l c
-```shell
+```
 输出c语言的头文件格式，输出的文件名为pdf.h，文件内容为：
 ```c
 #ifndef PDF_H
@@ -21,14 +21,14 @@ const unsigned char pdf_data[] = {0xaa, 0xbb, 0xcc......};
 const long size = 3556;
 
 #endif // end of PDF_DATA_H
-```c
+```
 
 pdf_data为文件转成的数组，size为数组的长度，也就是输入文件的长度。
 
 也可以使用如下命令：
 ```shell
 ./file2array -o a.pdf -o pdf -l cpp
-```shell
+```
 这种方式输出头文件格式如下：
 
 ```cpp
@@ -40,7 +40,7 @@ namespace PDF {
 }
 
 #endif // end of PDF_H
-```cpp
+```
 
 指定cpp格式输出，将数组包含在一个namespace中。
 
